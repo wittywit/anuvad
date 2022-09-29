@@ -12,7 +12,7 @@ p {
 
 #loading {
     background: url('spinner.gif') no-repeat center center;
-	background-color: black;
+	background-color: #040606;
     position: absolute;
     top: 0;
     left: 0;
