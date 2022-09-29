@@ -9,6 +9,18 @@ h4 {
 p {
     margin: 0 0 10px 0;
 }
+
+#loading {
+    background: url('spinner.gif') no-repeat center center;
+	background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 9999999;
+}
+
 #content, #device_info {
     max-width: 800px;
     /*height: 125px;*/
