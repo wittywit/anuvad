@@ -27,13 +27,17 @@ for (var i = 0; i < btn.length; i++) {
 for (var i = 0; i < btn.length; i++) {
     addAudioProperties(btn[i]);
 }
-// this maps the MIDI key value (60 - 64) to our samples
+// this maps the MIDI key value (59 - 69) to our samples
 var sampleMap = {
-    key60: 1,
-    key61: 2,
-    key62: 3,
-    key63: 4,
-    key64: 5
+    key59: 1,
+	key60: 2,
+    key61: 3,
+    key62: 4,
+    key64: 5,
+    key66: 6,
+	key68: 7,
+	key70: 8,
+	key72: 9
 };
 // user interaction, mouse click
 function clickPlayOn(e) {
