@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Shim version</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<head>
+<title>Select MIDI</title>
+  
+ <style type="text/css">
+.inner {position:absolute; bottom:0; left:0; width:100%; text-align:center;}
+select {width:15em;}
+</style> 
+  
+</head>
+
+<body>
+  <!--  Header -->
+<div class="header">
+  <img src="https://wittywit.com/anuvad/img/logo.svg" alt="Italian Trulli" class="logo" >
+</div> 
+
+<!-- END of HEADER -->
+  
+<h1>Select MIDI</h1>
+<p>
+  Crafting Intangibles: <select id=selectmidiin></select>        &nbsp &nbsp &nbsp &nbsp
+Audio: <select id=selectmidiout></select>
+</p>
+<p id=piano><p>
+  
+  <!--  back button -->
+<div style="position: fixed; bottom: 10%; left: 1%;">
+        <img src="https://wittywit.com/anuvad/img/back.svg" alt="Back" id="mybutton" onclick="backClick();">
+    </div>
+</body>
+<!-- partial -->
+  <script src='https://cdn.jsdelivr.net/npm/webmidi@3.0.21/dist/cjs/webmidi.cjs.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/jzz'></script>
+<script src='https://cdn.jsdelivr.net/npm/jzz-synth-tiny'></script>
+<script src='https://cdn.jsdelivr.net/npm/jzz-input-kbd'></script><script  src="./script.js"></script>
+
+</body>
+</html>
