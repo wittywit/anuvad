@@ -1,0 +1,313 @@
+
+<!-- saved from url=(0040)https://webmidilab.appspot.com/blesynth/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script type="text/javascript" async="" src="./BLE-MIDI _ Web Bluetooth _ Synth_files/analytics.js"></script><script async="" src="./BLE-MIDI _ Web Bluetooth _ Synth_files/js"></script>
+ 
+
+  <title>BLE-MIDI / Web Bluetooth / Synth</title>
+
+  <link href="./BLE-MIDI _ Web Bluetooth _ Synth_files/material-components-web.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./BLE-MIDI _ Web Bluetooth _ Synth_files/icon">
+  <script src="./BLE-MIDI _ Web Bluetooth _ Synth_files/material-components-web.min.js"></script>
+
+
+  <link rel="stylesheet" href="./BLE-MIDI _ Web Bluetooth _ Synth_files/style.css">
+
+  <script src="./BLE-MIDI _ Web Bluetooth _ Synth_files/webaudio-tinysynth"></script>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <style type="text/css"></style>
+  <script type="text/javascript"></script>
+
+  <style>
+      :root {
+        --mdc-theme-primary: #008192;
+      }
+    </style>
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1084.0" data-gr-ext-installed="">
+  <x-webmidirequestaccess sysex="false" input="true" output="true"></x-webmidirequestaccess>
+
+
+  <h1 class="title">BLE-MIDI / Web Bluetooth / Synth</h1>
+
+  <div style="float:left;padding: 2px 10px 0 4px;"><i class="material-icons" style="font-size: 32px; color: rgb(119, 119, 255); width: 32px;" id="btstatus">bluetooth_connected</i></div>
+
+  <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded" style="width: 10em; --mdc-ripple-fg-size:84px; --mdc-ripple-fg-scale:1.83993; --mdc-ripple-fg-translate-start:40.4688px, -24.3086px; --mdc-ripple-fg-translate-end:28px, -24px;" onclick="connect();">Connect</button>
+  <button class="foo-button mdc-button mdc-button--raised" style="width:10em;" onclick="disconnect();">Disconnect</button>
+  <!-- <button class="foo-button mdc-button mdc-button--raised" onclick="devInfo();">Device Info</button> -->
+  <br>
+
+  <div style="margin-top:2em; background-color:#f0f0f0; border: 1px solid #e4e4e4; border-radius:3px; padding: 10px;">
+    
+    <div class="mdc-select mdc-select--outlined demo-select-outline-shaped" style="width:230px;margin-right: 20px;">
+      <i class="mdc-select__dropdown-icon"></i>
+      <select id="prog" class="mdc-select__native-control" onchange="SetProgram(this.selectedIndex)">
+        <option value="" disabled=""></option>
+      <option>Acoustic Grand Piano</option><option>Bright Acoustic Piano</option><option>Electric Grand Piano</option><option>Honky-tonk Piano</option><option>Electric Piano 1</option><option>Electric Piano 2</option><option>Harpsichord</option><option>Clavi</option><option>Celesta</option><option>Glockenspiel</option><option>Music Box</option><option>Vibraphone</option><option>Marimba</option><option>Xylophone</option><option>Tubular Bells</option><option>Dulcimer</option><option>Drawbar Organ</option><option>Percussive Organ</option><option>Rock Organ</option><option>Church Organ</option><option>Reed Organ</option><option>Accordion</option><option>Harmonica</option><option>Tango Accordion</option><option>Acoustic Guitar (nylon)</option><option>Acoustic Guitar (steel)</option><option>Electric Guitar (jazz)</option><option>Electric Guitar (clean)</option><option>Electric Guitar (muted)</option><option>Overdriven Guitar</option><option>Distortion Guitar</option><option>Guitar harmonics</option><option>Acoustic Bass</option><option>Electric Bass (finger)</option><option>Electric Bass (pick)</option><option>Fretless Bass</option><option>Slap Bass 1</option><option>Slap Bass 2</option><option>Synth Bass 1</option><option>Synth Bass 2</option><option>Violin</option><option>Viola</option><option>Cello</option><option>Contrabass</option><option>Tremolo Strings</option><option>Pizzicato Strings</option><option>Orchestral Harp</option><option>Timpani</option><option>String Ensemble 1</option><option>String Ensemble 2</option><option>SynthStrings 1</option><option>SynthStrings 2</option><option>Choir Aahs</option><option>Voice Oohs</option><option>Synth Voice</option><option>Orchestra Hit</option><option>Trumpet</option><option>Trombone</option><option>Tuba</option><option>Muted Trumpet</option><option>French Horn</option><option>Brass Section</option><option>SynthBrass 1</option><option>SynthBrass 2</option><option>Soprano Sax</option><option>Alto Sax</option><option>Tenor Sax</option><option>Baritone Sax</option><option>Oboe</option><option>English Horn</option><option>Bassoon</option><option>Clarinet</option><option>Piccolo</option><option>Flute</option><option>Recorder</option><option>Pan Flute</option><option>Blown Bottle</option><option>Shakuhachi</option><option>Whistle</option><option>Ocarina</option><option>Lead 1 (square)</option><option>Lead 2 (sawtooth)</option><option>Lead 3 (calliope)</option><option>Lead 4 (chiff)</option><option>Lead 5 (charang)</option><option>Lead 6 (voice)</option><option>Lead 7 (fifths)</option><option>Lead 8 (bass + lead)</option><option>Pad 1 (new age)</option><option>Pad 2 (warm)</option><option>Pad 3 (polysynth)</option><option>Pad 4 (choir)</option><option>Pad 5 (bowed)</option><option>Pad 6 (metallic)</option><option>Pad 7 (halo)</option><option>Pad 8 (sweep)</option><option>FX 1 (rain)</option><option>FX 2 (soundtrack)</option><option>FX 3 (crystal)</option><option>FX 4 (atmosphere)</option><option>FX 5 (brightness)</option><option>FX 6 (goblins)</option><option>FX 7 (echoes)</option><option>FX 8 (sci-fi)</option><option>Sitar</option><option>Banjo</option><option>Shamisen</option><option>Koto</option><option>Kalimba</option><option>Bag pipe</option><option>Fiddle</option><option>Shanai</option><option>Tinkle Bell</option><option>Agogo</option><option>Steel Drums</option><option>Woodblock</option><option>Taiko Drum</option><option>Melodic Tom</option><option>Synth Drum</option><option>Reverse Cymbal</option><option>Guitar Fret Noise</option><option>Breath Noise</option><option>Seashore</option><option>Bird Tweet</option><option>Telephone Ring</option><option>Helicopter</option><option>Applause</option><option>Gunshot</option></select>
+      <div class="mdc-notched-outline mdc-notched-outline--upgraded mdc-notched-outline--notched">
+        <div class="mdc-notched-outline__leading"></div>
+        <div class="mdc-notched-outline__notch" style="width: 60px;">
+          <label for="shaped_outlined" class="mdc-floating-label mdc-floating-label--float-above" style="">Program</label>
+        </div>
+        <div class="mdc-notched-outline__trailing"></div>
+      </div>
+    </div>
+      <button id="testtone" class="foo-button mdc-button mdc-button--raised" title="TEST TONE"><i class="material-icons">
+music_note</i></button>
+      
+      <button id="panic" class="foo-button mdc-button mdc-button--raised" title="PANIC"><i class="material-icons">
+music_off</i></button>
+      
+  </div>
+
+  <div id="inputmonitor" style="display: none;">
+    <h3 class="title">input monitor</h3>
+    <pre id="messagelog" class="messagelog">99 dc 90 48 7f 
+9a ed 90 46 7f 
+9b d5 90 44 7f 
+9d 93 90 42 7f 
+9e b3 90 40 7f 
+9f cb 90 3e 7f 
+a0 f3 90 3d 7f 
+a2 9d 90 3c 7f 
+a3 c5 90 3b 7f 
+ae a9 90 48 7f 
+ae bb 90 46 7f 
+ae f3 90 44 7f 
+b3 dd 90 42 7f 
+b4 c5 90 40 7f 
+b5 ad 90 3e 7f 
+b6 91 90 3d 7f 
+b6 e4 90 3c 7f 
+b8 9a 90 3b 7f 
+bd d1 90 3b 7f 
+bd e4 90 42 7f 
+be c5 90 40 7f 
+bf bf 90 3c 7f 
+bf c7 90 3b 7f 
+bf d2 90 3d 7f 
+bf ec 90 3e 7f 
+87 d1 90 40 7f 
+89 97 90 3e 7f 
+89 f3 90 3d 7f 
+8a df 90 3c 7f 
+8b c4 90 3b 7f 
+8e e8 90 3c 7f 
+8f 86 90 3d 7f 
+8f af 90 3e 7f 
+96 e3 90 40 7f 
+98 a5 90 3e 7f 
+99 a3 90 3d 7f 
+99 e3 90 3c 7f 
+9a d2 90 3b 7f 
+9e a0 90 3e 7f 
+9e c5 90 3d 7f 
+9f aa 90 3c 7f 
+9f da 90 48 7f 
+a5 dc 90 40 7f 
+a6 d7 90 3e 7f 
+a7 ca 90 3d 7f 
+a8 f2 90 3c 7f 
+a9 da 90 3b 7f 
+ac ec 90 3c 7f 
+b4 d5 90 3e 7f 
+b6 84 90 3d 7f 
+b7 83 90 3c 7f 
+b7 ef 90 3b 7f 
+83 f8 90 40 7f 
+86 b4 90 3e 7f 
+88 94 90 3d 7f 
+8b a6 90 3c 7f 
+8c b3 90 3b 7f 
+93 9a 90 48 7f 
+95 ed 90 40 7f 
+98 9f 90 46 7f 
+98 b1 90 46 7f 
+98 c4 90 44 7f 
+98 e9 90 42 7f 
+9a d4 90 40 7f 
+9a f2 90 3e 7f 
+9b 8c 90 3d 7f 
+9c d8 90 3c 7f 
+9d cc 90 3b 7f 
+9e ce 90 3b 7f 
+84 ea 90 48 7f 
+89 9d 90 46 7f 
+8d c4 90 44 7f 
+92 b5 90 42 7f 
+96 fe 90 40 7f 
+9b 9d 90 3e 7f 
+9f a3 90 3d 7f 
+a3 e7 90 3c 7f 
+a8 83 90 3b 7f 
+b4 97 90 3b 7f 
+b6 85 90 3c 7f 
+b7 f8 90 3d 7f 
+b9 e9 90 3e 7f 
+bb dc 90 40 7f 
+bd f3 90 42 7f 
+bf e9 90 44 7f 
+81 cc 90 46 7f 
+83 ba 90 48 7f 
+ab f6 90 3b 7f 
+af d6 90 3c 7f 
+b3 d4 90 3d 7f 
+b7 c0 90 3e 7f 
+bb a4 90 40 7f 
+bf 96 90 42 7f 
+82 dd 90 44 7f 
+86 b6 90 46 7f 
+8a b8 90 48 7f 
+97 ac 90 48 7f 
+99 93 90 48 7f 
+9a f2 90 46 7f 
+9e 94 90 44 7f 
+a0 86 90 42 7f 
+a3 a6 90 40 7f 
+a6 81 90 40 7f 
+a8 cc 90 3e 7f 
+aa cd 90 3d 7f 
+ac 8b 90 3d 7f 
+ad ee 90 3c 7f 
+af a1 90 3c 7f 
+b0 f1 90 3b 7f 
+b2 8e 90 3b 7f 
+</pre>
+  </div>
+
+
+  <h3 class="title">MIDI monitor</h3>
+  <pre id="midilog" class="messagelog">[90 48 7F] 
+[90 46 7F] 
+[90 44 7F] 
+[90 42 7F] 
+[90 40 7F] 
+[90 3E 7F] 
+[90 3D 7F] 
+[90 3C 7F] 
+[90 3B 7F] 
+[90 48 7F] 
+[90 46 7F] 
+[90 44 7F] 
+[90 42 7F] 
+[90 40 7F] 
+[90 3E 7F] 
+[90 3D 7F] 
+[90 3C 7F] 
+[90 3B 7F] 
+[90 3B 7F] 
+[90 42 7F] 
+[90 40 7F] 
+[90 3C 7F] 
+[90 3B 7F] 
+[90 3D 7F] 
+[90 3E 7F] 
+[90 40 7F] 
+[90 3E 7F] 
+[90 3D 7F] 
+[90 3C 7F] 
+[90 3B 7F] 
+[90 3C 7F] 
+[90 3D 7F] 
+[90 3E 7F] 
+[90 40 7F] 
+[90 3E 7F] 
+[90 3D 7F] 
+[90 3C 7F] 
+[90 3B 7F] 
+[90 3E 7F] 
+[90 3D 7F] 
+[90 3C 7F] 
+[90 48 7F] 
+[90 40 7F] 
+[90 3E 7F] 
+[90 3D 7F] 
+[90 3C 7F] 
+[90 3B 7F] 
+[90 3C 7F] 
+[90 3E 7F] 
+[90 3D 7F] 
+[90 3C 7F] 
+[90 3B 7F] 
+[90 40 7F] 
+[90 3E 7F] 
+[90 3D 7F] 
+[90 3C 7F] 
+[90 3B 7F] 
+[90 48 7F] 
+[90 40 7F] 
+[90 46 7F] 
+[90 46 7F] 
+[90 44 7F] 
+[90 42 7F] 
+[90 40 7F] 
+[90 3E 7F] 
+[90 3D 7F] 
+[90 3C 7F] 
+[90 3B 7F] 
+[90 3B 7F] 
+[90 48 7F] 
+[90 46 7F] 
+[90 44 7F] 
+[90 42 7F] 
+[90 40 7F] 
+[90 3E 7F] 
+[90 3D 7F] 
+[90 3C 7F] 
+[90 3B 7F] 
+[90 3B 7F] 
+[90 3C 7F] 
+[90 3D 7F] 
+[90 3E 7F] 
+[90 40 7F] 
+[90 42 7F] 
+[90 44 7F] 
+[90 46 7F] 
+[90 48 7F] 
+[90 3B 7F] 
+[90 3C 7F] 
+[90 3D 7F] 
+[90 3E 7F] 
+[90 40 7F] 
+[90 42 7F] 
+[90 44 7F] 
+[90 46 7F] 
+[90 48 7F] 
+[90 48 7F] 
+[90 48 7F] 
+[90 46 7F] 
+[90 44 7F] 
+[90 42 7F] 
+[90 40 7F] 
+[90 40 7F] 
+[90 3E 7F] 
+[90 3D 7F] 
+[90 3D 7F] 
+[90 3C 7F] 
+[90 3C 7F] 
+[90 3B 7F] 
+[90 3B 7F] 
+</pre>
+
+  <hr>
+
+  <div id="footer">
+    <a href="http://pointofviewpoint.air-nifty.com/blog/2019/05/post-b57f91.html" target="_blank">about</a>
+    <a href="https://webmidilab.appspot.com/">back</a>
+  </div>
+
+
+
+  
+
+
+  <script src="./BLE-MIDI _ Web Bluetooth _ Synth_files/material-components-web.min.js"></script>
+  <script type="text/javascript" src="./BLE-MIDI _ Web Bluetooth _ Synth_files/app.js"></script>
+
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>

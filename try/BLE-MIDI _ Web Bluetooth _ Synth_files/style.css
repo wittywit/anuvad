@@ -1,0 +1,37 @@
+
+h1 {font-size: 16px; font-weight:bold; padding:0 0 10px 0;}
+.messagelog {
+    color:#666;
+    background: #EDF0FF;
+    border: 1px solid #EDF0FF;
+    padding: 10px;
+    border-radius: 8px;
+    /* 
+    border-radius: 8px;
+    height: 45%; 
+    */
+    height: 10em;
+    overflow: auto;
+    margin-bottom:2em;
+}
+
+#inputmonitor {
+    display:none;
+}
+
+.title {
+    color: #777777;
+    font-family: sans-serif;
+    margin-block-start:.5em;
+    margin-block-end:.1em;
+}
+
+#footer a{
+  margin-right:1em;
+}
+
+html,body {
+    overflow: hidden;
+    height: 100%;
+}
+
