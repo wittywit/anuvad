@@ -1,0 +1,111 @@
+
+h1 {font-size: 16px; font-weight:bold; padding:0 0 10px 0;}
+.messagelog {
+    color:#666;
+    background: #EDF0FF;
+    border: 1px solid #EDF0FF;
+    padding: 10px;
+    border-radius: 8px;
+    /* 
+    border-radius: 8px;
+    height: 45%; 
+    */
+    height: 10em;
+    overflow: auto;
+    margin-bottom:2em;
+}
+
+#inputmonitor {
+    display:none;
+}
+
+.title {
+    color: #777777;
+    font-family: sans-serif;
+    margin-block-start:.5em;
+    margin-block-end:.1em;
+}
+
+#footer a{
+  margin-right:1em;
+}
+
+html,body {
+    overflow: hidden;
+    height: 100%;
+}
+
+
+ /* Header Anuvad */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  max-width: 800px;
+  margin: auto;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #fff;
+  padding: 20px 10px;
+}
+
+.header img {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header img.logo {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 275;
+  font-size: 40px;
+  line-height: 60px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #000000;
+}
+
+.header-right {
+  float: right;
+}
+
+.frames {
+	margin: 10%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+	padding-top: 10%
+}
+
+@media screen and (max-width: 500px) {
+  .header img {
+    float: right;
+    display: block;
+    text-align: left;
+  }
+
+  .header-right {
+    float: none;
+  }
+}
+
+/* End of Header CSS */

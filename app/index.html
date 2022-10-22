@@ -1,0 +1,116 @@
+
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	
+  <script async="" src="./BLE-MIDI _ Web Bluetooth _ Synth_files/js"></script>
+ 
+
+  <title>Anuvad</title>
+
+  <link href="./BLE-MIDI _ Web Bluetooth _ Synth_files/material-components-web.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script src="./BLE-MIDI _ Web Bluetooth _ Synth_files/material-components-web.min.js"></script>
+
+
+  <link rel="stylesheet" href="./BLE-MIDI _ Web Bluetooth _ Synth_files/style.css">
+
+  <script src="./BLE-MIDI _ Web Bluetooth _ Synth_files/webaudio-tinysynth"></script>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <style type="text/css"></style>
+  <script type="text/javascript"></script>
+
+ <!-- <style>
+      :root {
+        --mdc-theme-primary: #008192;
+      }
+    </style>-->
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1084.0" data-gr-ext-installed="">
+  <x-webmidirequestaccess sysex="false" input="true" output="true"></x-webmidirequestaccess>
+
+
+  <!--  Header -->
+<div class="header">
+  <img src="https://wittywit.com/anuvad/img/logo.svg" alt="Anuvad logo" class="logo">
+</div>
+<hr>
+<!-- END of HEADER -->
+	<!--<div class="app">
+  <img src="https://wittywit.com/anuvad/img/Frame1.svg" alt="Frame-1" class="frames"> 
+		<br><br>
+
+</div>-->
+	
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	
+
+  <div style="float:left;padding: 2px 10px 0 4px;"><i class="material-icons" style="font-size: 32px; color: rgb(119, 119, 255); width: 32px;" id="btstatus">bluetooth_connected</i></div>
+
+  <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded" style="width: 10em; --mdc-ripple-fg-size:84px; --mdc-ripple-fg-scale:1.83993; --mdc-ripple-fg-translate-start:40.4688px, -24.3086px; --mdc-ripple-fg-translate-end:28px, -24px;" onclick="connect();">Connect</button>
+	
+  <button class="foo-button mdc-button mdc-button--raised" style="width:10em;" onclick="disconnect();">Disconnect</button>
+  <!-- <button class="foo-button mdc-button mdc-button--raised" onclick="devInfo();">Device Info</button> -->
+  <br>
+
+  <div style="margin-top:2em; background-color:#f0f0f0; border: 1px solid #e4e4e4; border-radius:3px; padding: 10px;">
+    
+    <div class="mdc-select mdc-select--outlined demo-select-outline-shaped" style="width:230px;margin-right: 20px;">
+      <i class="mdc-select__dropdown-icon"></i>
+      <select id="prog" class="mdc-select__native-control" onchange="SetProgram(this.selectedIndex)">
+        <option value="" disabled=""></option>
+      <option>Acoustic Grand Piano</option><option>Bright Acoustic Piano</option><option>Electric Grand Piano</option><option>Honky-tonk Piano</option><option>Electric Piano 1</option><option>Electric Piano 2</option><option>Harpsichord</option><option>Clavi</option><option>Celesta</option><option>Glockenspiel</option><option>Music Box</option><option>Vibraphone</option><option>Marimba</option><option>Xylophone</option><option>Tubular Bells</option><option>Dulcimer</option><option>Drawbar Organ</option><option>Percussive Organ</option><option>Rock Organ</option><option>Church Organ</option><option>Reed Organ</option><option>Accordion</option><option>Harmonica</option><option>Tango Accordion</option><option>Acoustic Guitar (nylon)</option><option>Acoustic Guitar (steel)</option><option>Electric Guitar (jazz)</option><option>Electric Guitar (clean)</option><option>Electric Guitar (muted)</option><option>Overdriven Guitar</option><option>Distortion Guitar</option><option>Guitar harmonics</option><option>Acoustic Bass</option><option>Electric Bass (finger)</option><option>Electric Bass (pick)</option><option>Fretless Bass</option><option>Slap Bass 1</option><option>Slap Bass 2</option><option>Synth Bass 1</option><option>Synth Bass 2</option><option>Violin</option><option>Viola</option><option>Cello</option><option>Contrabass</option><option>Tremolo Strings</option><option>Pizzicato Strings</option><option>Orchestral Harp</option><option>Timpani</option><option>String Ensemble 1</option><option>String Ensemble 2</option><option>SynthStrings 1</option><option>SynthStrings 2</option><option>Choir Aahs</option><option>Voice Oohs</option><option>Synth Voice</option><option>Orchestra Hit</option><option>Trumpet</option><option>Trombone</option><option>Tuba</option><option>Muted Trumpet</option><option>French Horn</option><option>Brass Section</option><option>SynthBrass 1</option><option>SynthBrass 2</option><option>Soprano Sax</option><option>Alto Sax</option><option>Tenor Sax</option><option>Baritone Sax</option><option>Oboe</option><option>English Horn</option><option>Bassoon</option><option>Clarinet</option><option>Piccolo</option><option>Flute</option><option>Recorder</option><option>Pan Flute</option><option>Blown Bottle</option><option>Shakuhachi</option><option>Whistle</option><option>Ocarina</option><option>Lead 1 (square)</option><option>Lead 2 (sawtooth)</option><option>Lead 3 (calliope)</option><option>Lead 4 (chiff)</option><option>Lead 5 (charang)</option><option>Lead 6 (voice)</option><option>Lead 7 (fifths)</option><option>Lead 8 (bass + lead)</option><option>Pad 1 (new age)</option><option>Pad 2 (warm)</option><option>Pad 3 (polysynth)</option><option>Pad 4 (choir)</option><option>Pad 5 (bowed)</option><option>Pad 6 (metallic)</option><option>Pad 7 (halo)</option><option>Pad 8 (sweep)</option><option>FX 1 (rain)</option><option>FX 2 (soundtrack)</option><option>FX 3 (crystal)</option><option>FX 4 (atmosphere)</option><option>FX 5 (brightness)</option><option>FX 6 (goblins)</option><option>FX 7 (echoes)</option><option>FX 8 (sci-fi)</option><option>Sitar</option><option>Banjo</option><option>Shamisen</option><option>Koto</option><option>Kalimba</option><option>Bag pipe</option><option>Fiddle</option><option>Shanai</option><option>Tinkle Bell</option><option>Agogo</option><option>Steel Drums</option><option>Woodblock</option><option>Taiko Drum</option><option>Melodic Tom</option><option>Synth Drum</option><option>Reverse Cymbal</option><option>Guitar Fret Noise</option><option>Breath Noise</option><option>Seashore</option><option>Bird Tweet</option><option>Telephone Ring</option><option>Helicopter</option><option>Applause</option><option>Gunshot</option></select>
+     <!-- <div class="mdc-notched-outline mdc-notched-outline--upgraded mdc-notched-outline--notched">
+        <div class="mdc-notched-outline__leading"></div>
+        <div class="mdc-notched-outline__notch" style="width: 60px;">
+          <label for="shaped_outlined" class="mdc-floating-label mdc-floating-label--float-above" style="">Program</label>
+        </div>
+        <div class="mdc-notched-outline__trailing"></div>
+      </div>-->
+    </div>
+      <button id="testtone" class="foo-button mdc-button mdc-button--raised" title="TEST TONE"><i class="material-icons">
+music_note</i></button>
+      
+      <button id="panic" class="foo-button mdc-button mdc-button--raised" title="PANIC"><i class="material-icons">
+music_off</i></button>
+      
+  </div>
+
+ <div id="inputmonitor" style="display: none;">
+    <h3 class="title">input monitor</h3>
+    <pre id="messagelog" class="messagelog"> 
+
+</pre>
+  </div>
+
+
+  <h3 class="title" style="display: none;" >MIDI monitor</h3>
+  <pre id="midilog" class="messagelog" style="visibility: hidden; display:inline;">
+</pre>
+
+ 
+
+  <!--<div id="footer">
+    <a href="http://pointofviewpoint.air-nifty.com/blog/2019/05/post-b57f91.html" target="_blank">about</a>
+    <a href="https://webmidilab.appspot.com/">back</a>
+  </div>-->
+
+
+
+  
+
+
+  <script src="./BLE-MIDI _ Web Bluetooth _ Synth_files/material-components-web.min.js"></script>
+  <script type="text/javascript" src="./BLE-MIDI _ Web Bluetooth _ Synth_files/app.js"></script>
+	
+
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
